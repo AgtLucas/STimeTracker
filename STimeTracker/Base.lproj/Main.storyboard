@@ -18,17 +18,24 @@
                             <rect key="frame" x="0.0" y="64" width="600" height="44"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
-                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="F3k-1G-pfH">
-                                    <rect key="frame" x="8" y="8" width="97" height="30"/>
+                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="F3k-1G-pfH">
+                                    <rect key="frame" x="8" y="7" width="546" height="30"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                     <textInputTraits key="textInputTraits"/>
                                 </textField>
-                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RJU-gi-xKr">
-                                    <rect key="frame" x="546" y="8" width="46" height="30"/>
-                                    <state key="normal" title="Button"/>
+                                <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RJU-gi-xKr">
+                                    <rect key="frame" x="562" y="7" width="30" height="30"/>
+                                    <state key="normal" title="Add"/>
                                 </button>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="trailing" secondItem="RJU-gi-xKr" secondAttribute="trailing" constant="8" id="0dU-dp-ZhC"/>
+                                <constraint firstItem="F3k-1G-pfH" firstAttribute="centerY" secondItem="nUo-Zi-Ebp" secondAttribute="centerY" id="K7u-1B-lTm"/>
+                                <constraint firstItem="RJU-gi-xKr" firstAttribute="centerY" secondItem="nUo-Zi-Ebp" secondAttribute="centerY" id="PSd-dI-stN"/>
+                                <constraint firstItem="RJU-gi-xKr" firstAttribute="leading" secondItem="F3k-1G-pfH" secondAttribute="trailing" constant="8" id="RHw-dK-rtm"/>
+                                <constraint firstItem="F3k-1G-pfH" firstAttribute="leading" secondItem="nUo-Zi-Ebp" secondAttribute="leading" constant="8" id="wBp-MQ-I3G"/>
+                            </constraints>
                         </view>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ProjectCell" id="HCg-HZ-J9K" customClass="ProjectCell" customModule="STimeTracker" customModuleProvider="target">
