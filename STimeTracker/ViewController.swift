@@ -11,10 +11,19 @@ import UIKit
 class ViewController: UITableViewController {
     
     let projects = store.projects
+    var notificationToken: NotificationToken?
+    @IBOutlet var newProjectTextField: UITextField!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        updateView()
+        notificationToken = store.addNotificationBlock { [weak self] (_) in
+            self?.updateView()
+        }
+    }
+    
+    func updateView() {
+        tableView.reloadData()
     }
 
     override func didReceiveMemoryWarning() {
