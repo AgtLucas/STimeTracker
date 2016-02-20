@@ -93,3 +93,6 @@ extension Realm {
         }
     }
 }
+
+//  MARK : Store instance
+let store = try! Realm()
