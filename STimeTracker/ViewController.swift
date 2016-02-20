@@ -66,6 +66,14 @@ class ViewController: UITableViewController {
         cell.project = projects[indexPath.row]
         return cell
     }
+    
+    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+        return true
+    }
+    
+    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        store.deleteProject(projects[indexPath.row])
+    }
 
 }
 
