@@ -16,7 +16,6 @@ class ViewController: UITableViewController {
     
     @IBOutlet weak var newProjectTextField: UITextField!
     
-
     override func viewDidLoad() {
         super.viewDidLoad()
         updateView()
@@ -30,10 +29,25 @@ class ViewController: UITableViewController {
     }
 
     @IBAction func addButtonTapped() {
+        guard let name = newProjectTextField.text else { return }
+        store.addProject(name)
     }
     
     @IBAction func showNewProjectView(sender: AnyObject) {
+        tableView.tableHeaderView?.frame = CGRect(origin: CGPointZero, size: CGSize(width: view.frame.size.width, height: 44))
+        tableView.tableHeaderView?.hidden = false
+        tableView.tableHeaderView = tableView.tableHeaderView // tableHeaderView needs to be reassigned to recognize new height
+        newProjectTextField.becomeFirstResponder()
     }
+    
+    func hideNewProjectView() {
+        tableView.tableHeaderView?.frame = CGRect(origin: CGPointZero, size: CGSize(width: view.frame.size.width, height: 0))
+        tableView.tableHeaderView?.hidden = true
+        tableView.tableHeaderView = tableView.tableHeaderView
+        newProjectTextField.endEditing(true)
+        newProjectTextField.text = nil
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
