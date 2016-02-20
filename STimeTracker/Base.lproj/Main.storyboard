@@ -6,7 +6,7 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--Root View Controller-->
+        <!--Time Tracker-->
         <scene sceneID="pmG-y3-q0h">
             <objects>
                 <tableViewController id="DeM-Ox-K6N" customClass="ViewController" customModule="STimeTracker" customModuleProvider="target" sceneMemberID="viewController">
@@ -25,6 +25,9 @@
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A7k-AV-9aY">
                                             <rect key="frame" x="558" y="7" width="34" height="30"/>
                                             <state key="normal" title="Start"/>
+                                            <connections>
+                                                <action selector="activityButtonTapped" destination="HCg-HZ-J9K" eventType="touchUpInside" id="s6J-9t-HD7"/>
+                                            </connections>
                                         </button>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uO8-QW-TFf">
                                             <rect key="frame" x="508" y="11" width="42" height="21"/>
@@ -48,6 +51,11 @@
                                         <constraint firstItem="A7k-AV-9aY" firstAttribute="centerY" secondItem="v92-JW-uYO" secondAttribute="centerY" id="mF5-75-7a3"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="activityButton" destination="A7k-AV-9aY" id="6DZ-i6-jzq"/>
+                                    <outlet property="elapsedTimeLabel" destination="uO8-QW-TFf" id="Guz-30-NSP"/>
+                                    <outlet property="nameLabel" destination="46b-5v-1mz" id="nOF-L9-A0N"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -55,7 +63,7 @@
                             <outlet property="delegate" destination="DeM-Ox-K6N" id="w2q-tT-eyV"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="RZy-7F-FJ6"/>
+                    <navigationItem key="navigationItem" title="Time Tracker" id="RZy-7F-FJ6"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iO8-sL-rOW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
