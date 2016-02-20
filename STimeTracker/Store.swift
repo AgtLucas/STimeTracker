@@ -36,3 +36,10 @@ extension Project {
         return activities.filter("endDate == nil").first
     }
 }
+
+extension Realm {
+    var projects: Results<Project> {
+        return objects(Project.self)
+    }
+}
+
