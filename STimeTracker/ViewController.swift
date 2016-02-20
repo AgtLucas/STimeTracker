@@ -91,9 +91,9 @@ class ProjectCell: UITableViewCell {
     @IBAction func activityButtonTapped() {
         guard let project = project else { return }
         if project.currentActivity == nil {
-            // TODO: Start a new Activity
+            store.startActivity(project, startDate: NSDate())
         } else {
-            // TODO: Complete the Activity
+            store.endActivity(project, endDate: NSDate())
         }
     }
 }
