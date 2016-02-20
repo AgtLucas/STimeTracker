@@ -13,7 +13,9 @@ class ViewController: UITableViewController {
     
     let projects = store.projects
     var notificationToken: NotificationToken?
-    @IBOutlet var newProjectTextField: UITextField!
+    
+    @IBOutlet weak var newProjectTextField: UITextField!
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,6 +29,11 @@ class ViewController: UITableViewController {
         tableView.reloadData()
     }
 
+    @IBAction func addButtonTapped() {
+    }
+    
+    @IBAction func showNewProjectView(sender: AnyObject) {
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

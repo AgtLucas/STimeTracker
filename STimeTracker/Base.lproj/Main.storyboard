@@ -26,6 +26,10 @@
                                 <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RJU-gi-xKr">
                                     <rect key="frame" x="562" y="7" width="30" height="30"/>
                                     <state key="normal" title="Add"/>
+                                    <connections>
+                                        <action selector="addButtonTapped" destination="DeM-Ox-K6N" eventType="touchUpInside" id="vhA-h2-mA3"/>
+                                        <action selector="showNewProjectView:" destination="DeM-Ox-K6N" eventType="touchUpInside" id="1qr-Dl-ZVa"/>
+                                    </connections>
                                 </button>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -89,6 +93,9 @@
                     <navigationItem key="navigationItem" title="Time Tracker" id="RZy-7F-FJ6">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="E6n-rP-tXu"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="newProjectTextField" destination="F3k-1G-pfH" id="jYE-g2-rmr"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iO8-sL-rOW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
