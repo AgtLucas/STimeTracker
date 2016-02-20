@@ -21,3 +21,18 @@ class Activity: Object {
     dynamic var endDate: NSDate?
     
 }
+
+// Extension...
+extension Project {
+    var elapsedTime: NSTimeInterval {
+        return activities.reduce(0) { time, activity in
+            guard let start = activity.startDate,
+                let end = activity.endDate else { return time }
+            return time + end.timeIntervalSinceDate(start)
+        }
+    }
+    
+    var currentActivity: Activity? {
+        return activities.filter("endDate == nil").first
+    }
+}
